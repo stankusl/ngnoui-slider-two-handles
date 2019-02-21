@@ -1,0 +1,65 @@
+<div class="block-holder">
+
+  <span class="filter-text">Filters</span>
+
+  <div class="block">
+    <app-filter-dd-component
+      [name]="'Storage'"
+      [rangeValues]="storageRange"
+      (updateValue)="updateFilterValueStorage($event)"
+    ></app-filter-dd-component>
+  </div>
+
+  <div class="block">
+    <app-filter-dd-component
+      [name]="'VCount'"
+      [rangeValues]="virtualCoreRange"
+      (updateValue)="updateFilterValueVCount($event)"
+    ></app-filter-dd-component>
+  </div>
+
+  <div class="block">
+    <app-filter-dd-component
+      [name]="'Memory'"
+      [rangeValues]="memoryRange"
+      (updateValue)="updateFilterValueMemory($event)"
+    ></app-filter-dd-component>
+  </div>
+
+  <div class="block">
+    <app-filter-dd-component
+      [name]="'FileCount'"
+      [rangeValues]="fileCountRange"
+      (updateValue)="updateFilterValueFileCount($event)"
+    ></app-filter-dd-component>
+  </div>
+
+  <div class="block clear-all-button" (click)="clearAllFilters()">
+    Clear All
+  </div>
+
+  <div class="clearfix"></div>
+</div>
+
+
+<div>
+  <br>
+  <br>
+  debug:
+  <pre>
+    Storage Range: {{ storageRange | json  }}
+  </pre>
+
+  <pre>
+    Virtual core Range: {{ virtualCoreRange | json }}
+  </pre>
+
+  <pre>
+    Memory Range: {{ memoryRange | json }}
+  </pre>
+
+  <pre>
+    File Count Range: {{ fileCountRange | json }}
+  </pre>
+
+</div>

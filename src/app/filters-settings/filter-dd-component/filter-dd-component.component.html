@@ -1,0 +1,44 @@
+<div class="dropdown {{ dropDownStatus ? 'open': null }}">
+  <div class="name-holder">
+    {{ name }}
+    <span class="value-indicator"
+          *ngIf="(rangeValues[0] !== 0|| rangeValues[1] !== 100)"
+    >
+      {{ rangeValues[0] }}% - {{ rangeValues[1] }}%
+    </span>
+  </div>
+
+
+  <div class="status-indicator" (click)="openDropdown()">
+    <span *ngIf="dropDownStatus">&#x25B2;</span>
+    <span *ngIf="!dropDownStatus">&#x25BC;</span>
+  </div>
+
+  <div class="first-divider"></div>
+  <div class="content-information">
+    <!--<span class="range-information">-->
+      <!--Range selected: {{ rangeValues[0] }}% - {{ rangeValues[1] }}%-->
+    <!--</span>-->
+
+    <nouislider
+      #slider
+      [connect]="true"
+      [min]="0"
+      [max]="100"
+      [step]="10"
+      [(ngModel)]="rangeValues"
+      [tooltips]="true"
+      (change)="updateValueModel(slider)"
+    ></nouislider>
+
+  </div>
+
+  <div class="second-divider"></div>
+
+  <div class="clear-all-button" (click)="clearAll()">
+    Clear
+  </div>
+
+  <!--<div class="status-indicator">&#x25B2;</div>-->
+
+</div>

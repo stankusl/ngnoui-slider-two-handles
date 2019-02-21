@@ -1,0 +1,42 @@
+:host {
+  .block-holder {
+    background-color: #18293f;
+    height: 40px;
+    overflow: visible;
+    width: 100%;
+    border: 2px solid #000;
+  }
+
+  .filter-text {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #8b949e;
+    font-size: 1.2em;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    margin-right: 35px;
+    float: left;
+  }
+
+  .block {
+    margin-right: 25px;
+    display: block;
+    float: left;
+  }
+
+  .clear-all-button {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #67c2f8;
+    font-size: 1.2em;
+    padding-top: 5px;
+    margin-right: 15px;
+    float: left;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+}
+
+.clearfix {
+  clear: both;
+  float: none;
+}

@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+
+@import "~nouislider/distribute/nouislider.min.css";
+
+
+
+// NoUISlider Overwrites
+.noUi-handle {
+  right:-9px !important;
+  top: -4px !important;
+  width: 12px !important;
+  height: 12px !important;
+  border: none !important;
+  border-radius: 50%;
+  background-color: #2452c0;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+  &:before {
+    content: none;
+  }
+  &:after {
+    content: none;
+  }
+}
+
+.noUi-tooltip {
+  background:  none;
+  border: none;
+  color: #fff;
+  font-size: 0.7em;
+  &:before {
+    content: "%";
+    position: absolute;
+    right: -7px;
+    color: #fff;
+  }
+}
+
+.noUi-connect {
+  background-color: #2452c0;
+}
+
+.noUi-target {
+  background: #24344a;
+  border-radius: 4px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+
+.noUi-target {
+  height: 3px;
+}
+
+

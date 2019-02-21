@@ -1,0 +1,70 @@
+:host {
+  .dropdown {
+    position: relative;
+    margin-top: 3px;
+    color: #fbfbfb;
+    border: 2px solid #203045;
+    border-radius: 5px;
+    background-color: #122339;
+    height: 25px;
+    font-size: 1em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 2px 25px 2px 15px;
+    z-index: 100;
+    overflow: hidden;
+
+
+    .first-divider {
+      height: 1px;
+      width: 105%;
+      background-color: #203044;
+      margin-top:20px;
+      margin-bottom: 20px;
+    }
+
+    .second-divider {
+      height: 1px;
+      width: 105%;
+      background-color: #203044;
+      margin-top:10px;
+      margin-bottom: 5px;
+    }
+
+    .name-holder {
+      padding-top:3px;
+      .value-indicator {
+        color: #9fa7af;
+      }
+    }
+
+    &.open {
+      height: 120px;
+      border: 2px solid #3e97d5;
+    }
+  }
+
+  .status-indicator {
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    cursor: pointer;
+  }
+
+  .content-information {
+    min-width: 175px;
+    margin-top: 30px;
+  }
+
+  .clear-all-button {
+    color: #67c2f8;
+    font-size: 0.8em;
+    text-align: right;
+    cursor: pointer;
+    margin-right: -7px;
+  }
+}
+
+
+
+
