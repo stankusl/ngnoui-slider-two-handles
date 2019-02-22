@@ -32,6 +32,10 @@ export class FilterDdComponentComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   @HostListener('document:touchstart', ['$event'])
   handleOutsideClick(event) {
+    console.log(event)
+    console.log(this.elem.nativeElement)
+    console.log(event.target)
+
     if (!this.elem.nativeElement.contains(event.target)) {
       this.dropDownStatus = false;
     }
@@ -42,7 +46,13 @@ export class FilterDdComponentComponent implements OnInit {
   ngOnInit() {}
 
   public openDropdown() {
+    console.log('init dd')
     this.dropDownStatus = !this.dropDownStatus;
+  }
+
+  public specialOpenDropdown() {
+    console.log('this is special dd')
+    this.dropDownStatus = true;
   }
 
   public updateValueModel(value) {

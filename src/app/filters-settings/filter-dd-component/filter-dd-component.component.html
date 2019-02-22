@@ -1,20 +1,20 @@
 <div #elem class="dropdown {{ dropDownStatus ? 'open': null }}">
 
-  <div class="click-area disHighlight" (click)="openDropdown()">
+  <div class="click-area" (click)="openDropdown()">
 
-    <div class="name-holder">
+    <div class="name-holder disHighlight" >
       {{ name }}
       <span class="value-indicator"
             *ngIf="(rangeValues[0] !== 0|| rangeValues[1] !== 100)"
       >
         {{ rangeValues[0] }}%-{{ rangeValues[1] }}%
       </span>
+
+      <div class="status-indicator">
+        <div>{{ !dropDownStatus ? '&#x25BC;': '&#x25B2;'}}</div>
+      </div>
     </div>
 
-    <div class="status-indicator">
-      <span *ngIf="dropDownStatus" >&#x25B2;</span>
-      <span *ngIf="!dropDownStatus">&#x25BC;</span>
-    </div>
 
   </div>
 
