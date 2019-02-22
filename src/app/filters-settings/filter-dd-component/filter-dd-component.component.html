@@ -12,7 +12,7 @@
     </div>
 
     <div class="status-indicator">
-      <span *ngIf="dropDownStatus">&#x25B2;</span>
+      <span *ngIf="dropDownStatus" >&#x25B2;</span>
       <span *ngIf="!dropDownStatus">&#x25BC;</span>
     </div>
 
@@ -37,10 +37,10 @@
 
   <div class="second-divider"></div>
 
-  <div class="clear-all-button" (click)="reset()">
+  <div *ngIf="(rangeValues[0] !== 0|| rangeValues[1] !== 100)"
+       class="clear-all-button" (click)="reset()"
+  >
     Clear
   </div>
-
-  <!--<div class="status-indicator">&#x25B2;</div>-->
 
 </div>
