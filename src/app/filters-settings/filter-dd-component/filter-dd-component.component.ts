@@ -3,7 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
-  EventEmitter,
+  EventEmitter, HostListener,
   Input,
   OnInit,
   Output,
@@ -15,7 +15,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-filter-dd-component',
   styleUrls: ['./filter-dd-component.component.scss'],
-  templateUrl: './filter-dd-component.component.html'
+  templateUrl: './filter-dd-component.component.html',
 })
 
 export class FilterDdComponentComponent implements OnInit {
@@ -27,6 +27,15 @@ export class FilterDdComponentComponent implements OnInit {
   @Output() updateValue = new EventEmitter<any>();
 
   @ViewChild('slider', {read: ElementRef}) slider: ElementRef;
+  @ViewChild('elem', {read: ElementRef}) elem: ElementRef;
+
+  @HostListener('document:click', ['$event'])
+  @HostListener('document:touchstart', ['$event'])
+  handleOutsideClick(event) {
+    if (!this.elem.nativeElement.contains(event.target)) {
+      this.dropDownStatus = false;
+    }
+  }
 
   constructor() { }
 
@@ -50,7 +59,7 @@ export class FilterDdComponentComponent implements OnInit {
     this.updateValue.emit(value);
   }
 
-  public clearAll() {
+  public reset() {
     this.changeValue();
     this.dropDownStatus = false;
   }

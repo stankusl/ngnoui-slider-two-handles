@@ -1,6 +1,6 @@
-<div class="dropdown {{ dropDownStatus ? 'open': null }}">
+<div #elem class="dropdown {{ dropDownStatus ? 'open': null }}">
 
-  <div class="click-area" (click)="openDropdown()">
+  <div class="click-area disHighlight" (click)="openDropdown()">
 
     <div class="name-holder">
       {{ name }}
@@ -19,10 +19,8 @@
   </div>
 
   <div class="first-divider"></div>
+
   <div class="content-information">
-    <!--<span class="range-information">-->
-      <!--Range selected: {{ rangeValues[0] }}% - {{ rangeValues[1] }}%-->
-    <!--</span>-->
 
     <nouislider
       #slider
@@ -39,7 +37,7 @@
 
   <div class="second-divider"></div>
 
-  <div class="clear-all-button" (click)="clearAll()">
+  <div class="clear-all-button" (click)="reset()">
     Clear
   </div>
 
