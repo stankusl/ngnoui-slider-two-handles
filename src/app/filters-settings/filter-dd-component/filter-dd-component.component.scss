@@ -12,7 +12,11 @@
     padding: 2px 25px 2px 15px;
     z-index: 100;
     overflow: hidden;
+    transition: height 0.15s ease-out;
 
+    .click-area {
+      cursor: pointer;
+    }
 
     .first-divider {
       height: 1px;

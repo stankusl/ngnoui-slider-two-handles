@@ -2,15 +2,13 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-filters-settings',
+  styleUrls: ['./filters-settings.component.scss'],
   templateUrl: './filters-settings.component.html',
-  styleUrls: ['./filters-settings.component.scss']
 })
+
 export class FiltersSettingsComponent implements OnInit {
 
-  public showStorage = false;
-  public showFileCount = false;
-  public showVirtualCores = false;
-  public showMemory = false;
+  public resetAll = false;
 
   public storageRange = [0, 100];
   public virtualCoreRange = [0, 100];

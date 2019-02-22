@@ -10,6 +10,7 @@ import {
   ViewChild
 } from '@angular/core';
 
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-filter-dd-component',
@@ -19,34 +20,30 @@ import {
 
 export class FilterDdComponentComponent implements OnInit {
 
+  @Input() resetAllClose = false;
   @Input() dropDownStatus = false;
   @Input() name = 'Undefined';
   @Input() rangeValues;
-  @Output() updateValue =  new EventEmitter<any>();
+  @Output() updateValue = new EventEmitter<any>();
 
   @ViewChild('slider', {read: ElementRef}) slider: ElementRef;
 
-  constructor(
-    private ref: ChangeDetectorRef
-  ) { }
+  constructor() { }
 
   ngOnInit() {}
 
   public openDropdown() {
     this.dropDownStatus = !this.dropDownStatus;
-    this.ref.markForCheck();
   }
 
   public updateValueModel(value) {
     this.rangeValues = value.value;
     this.emitNewValue(this.rangeValues);
-    this.ref.markForCheck();
   }
 
   private changeValue() {
     this.rangeValues = [0, 100];
     this.emitNewValue(this.rangeValues);
-    this.ref.markForCheck();
   }
 
   private emitNewValue(value) {
@@ -56,7 +53,6 @@ export class FilterDdComponentComponent implements OnInit {
   public clearAll() {
     this.changeValue();
     this.dropDownStatus = false;
-    this.ref.markForCheck();
   }
 
 }

@@ -1,17 +1,21 @@
 <div class="dropdown {{ dropDownStatus ? 'open': null }}">
-  <div class="name-holder">
-    {{ name }}
-    <span class="value-indicator"
-          *ngIf="(rangeValues[0] !== 0|| rangeValues[1] !== 100)"
-    >
-      {{ rangeValues[0] }}% - {{ rangeValues[1] }}%
-    </span>
-  </div>
 
+  <div class="click-area" (click)="openDropdown()">
 
-  <div class="status-indicator" (click)="openDropdown()">
-    <span *ngIf="dropDownStatus">&#x25B2;</span>
-    <span *ngIf="!dropDownStatus">&#x25BC;</span>
+    <div class="name-holder">
+      {{ name }}
+      <span class="value-indicator"
+            *ngIf="(rangeValues[0] !== 0|| rangeValues[1] !== 100)"
+      >
+        {{ rangeValues[0] }}%-{{ rangeValues[1] }}%
+      </span>
+    </div>
+
+    <div class="status-indicator">
+      <span *ngIf="dropDownStatus">&#x25B2;</span>
+      <span *ngIf="!dropDownStatus">&#x25BC;</span>
+    </div>
+
   </div>
 
   <div class="first-divider"></div>
